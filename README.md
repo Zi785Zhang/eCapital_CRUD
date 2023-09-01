@@ -1,4 +1,35 @@
 # Take-home Assignment (Full Stack) #
+* Choice of stack is Angular front-end, .NET framwork back-end, and MSSQL Server for DB
+
+### Setup guide: ###
+* Clone reposioty to local
+* Open EmployeeAPI as project/solution in Visual Studio 
+* There are two ways to initialize the DB
+  * by running `dotnet ng database update`, which triggers the db migration to create the DB with table and information
+  * by running the sql script EmployeeDB_creation.sql
+* after database creation, run the EmployeeAPI, Swagger UI should show up and all CRUD API methods could be tested
+* Open EmployeesFrontEnd in Visual Studio code
+  * Run `npm i` , then `ng serve` to start the web server
+  * Navigate to http://localhost:4200/ for the application
+
+### Exteral packages ###
+All exteral packages list:
+* Back-end
+  * Microsoft.EntityFrameworkCore
+  * Microsoft.EntityFrameworkCore.Design
+  * Microsoft.EntityFrameworkCore.Tools
+  * Microsoft.EntityFrameworkCore.sqlserver
+  * Dotnet entity framework
+* Front-end
+  * Bootstrap
+  * Bootstrap widgets
+  * Angular bootstrap icons
+
+### Result Image ###
+* Application UI
+![](app_ui.png)
+* Edit/creation window
+![](edit_window.png)
 
 ### Goal: ###
 * Create an Employee Table like the one in the image below.
