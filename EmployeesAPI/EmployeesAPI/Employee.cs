@@ -2,12 +2,13 @@
 {
     public class Employee
     {
-        public int Id { get; set; }
+        // Employee class for data structure
+        public int id { get; set; }
 
-        public string FirstName { get; set; } = string.Empty;
+        public string first_name { get; set; } = string.Empty;
 
-        public string LastName { get; set; } = string.Empty;
+        public string last_name { get; set; } = string.Empty;
 
-        public int Salary { get; set; }
+        public int salary { get; set; }
     }
 }
