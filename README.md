@@ -5,9 +5,10 @@
 * Clone reposioty to local
 * Open EmployeeAPI as project/solution in Visual Studio 
 * There are two ways to initialize the DB
-  * by running `dotnet ng database update`, which triggers the db migration to create the DB with table and information
+  * by cd-ing into EmployeesAPI, running `dotnet ef database update`, which triggers the db migration to create the DB with table and information
   * by running the sql script EmployeeDB_creation.sql
-* after database creation, run the EmployeeAPI, Swagger UI should show up and all CRUD API methods could be tested
+* Using MSSQL server management studio, check if database EmployeeDB, table Employees, and valid employee information exists
+* run the EmployeeAPI, Swagger UI should show up and all CRUD API methods could be tested
 * Open EmployeesFrontEnd in Visual Studio code
   * Run `npm i` , then `ng serve` to start the web server
   * Navigate to http://localhost:4200/ for the application
