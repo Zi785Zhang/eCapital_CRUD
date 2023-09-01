@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="th">First Name</th>
+      <th class="th">Last Name</th>
+      <th class="th">Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeeList">
+      <td class="td">{{ employee.first_name }}</td>
+      <td class="td">{{ employee.last_name }}</td>
+      <td class="td">{{ employee.salary }}</td>
+    </tr>
+  </tbody>
+</table>
