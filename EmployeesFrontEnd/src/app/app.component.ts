@@ -10,7 +10,7 @@ import { EmployeeService } from './services/employee.service';
 export class AppComponent {
   title = 'EmployeesFrontEnd';
   employeeList: Employee[] = [];
-  target: Employee = new Employee();
+  target = new Employee();
 
   constructor(private employeeService: EmployeeService) {}
 
@@ -20,6 +20,7 @@ export class AppComponent {
 
   updateEmployeeList(employeeList: Employee[]){
     this.employeeList = employeeList;
+    this.target = new Employee();
   }
 
   updateTarget(employee: Employee){
@@ -29,8 +30,6 @@ export class AppComponent {
   public deleteEmployee(employee: Employee){
     this.employeeService
       .deleteEmployee(employee)
-      .subscribe(() => {
-        this.ngOnInit()
-      })
+      .subscribe((result: Employee[]) => (this.employeeList = result));
   }
 }

@@ -1,7 +1,8 @@
+
 /* You can add global styles to this file, and also import other style files */
 
 body{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Gill Sans', sans-serif;
     padding: 1em;
     background-color: rgb(206, 206, 206);
 }
@@ -46,7 +47,7 @@ td{
 }
 
 .btn{
-    width: 100px;
+    width: 80px;
     margin-left: 10px;
 }
 

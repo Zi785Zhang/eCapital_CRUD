@@ -21,9 +21,10 @@ export class EmployeeCrudComponent {
   ngOnInit(): void{}
 
   open(content:any) {
-    console.log("opened?")
-		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result
+		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title'}).result
 	}
+
+  // Method to validate that salary input is numeric.
 
   validateSalary(employee: Employee){
     if (typeof employee.salary === 'number'){
@@ -31,6 +32,8 @@ export class EmployeeCrudComponent {
     }
     return false;
   }
+
+  // CU methods
 
   addEmployee(employee: Employee){
     this.employeeService
@@ -43,11 +46,4 @@ export class EmployeeCrudComponent {
       .editEmployee(employee)
       .subscribe((employees: Employee[]) => this.updatedEmployees.emit(employees))
   }
-
-  deleteEmployee(employee: Employee){
-    this.employeeService
-      .deleteEmployee(employee)
-      .subscribe((employees: Employee[]) => this.updatedEmployees.emit(employees))
-  }
-  
 }

@@ -12,23 +12,40 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) { }
 
-  public getEmployees(): Observable<Employee[]>{
-    console.log("get employee")
-    return this.http.get<Employee[]>(`${environment.apiUrl}/${this.url}`);
+  public getEmployees(): Observable<Employee[]>|any{
+    try{
+      return this.http.get<Employee[]>(`${environment.apiUrl}/${this.url}`);
+    }
+    catch(e){
+      console.log(e)
+    }
   }
 
-  public addEmployee(employee: Employee): Observable<Employee[]>{
-    console.log("post employee")
-    return this.http.post<Employee[]>(`${environment.apiUrl}/${this.url}`, employee);
+  public addEmployee(employee: Employee): Observable<Employee[]>|any{
+    try{
+      return this.http.post<Employee[]>(`${environment.apiUrl}/${this.url}`, employee);
+    }
+    catch(e){
+      console.log(e)
+    }
   }
 
-  public editEmployee(employee: Employee): Observable<Employee[]>{
-    return this.http.put<Employee[]>(`${environment.apiUrl}/${this.url}`, employee);
+  public editEmployee(employee: Employee): Observable<Employee[]>|any{
+    try{
+      return this.http.put<Employee[]>(`${environment.apiUrl}/${this.url}`, employee);
+    }
+    catch(e){
+      console.log(e)
+    }
   }
 
-  public deleteEmployee(employee: Employee): Observable<Employee[]>{
-    console.log(`${environment.apiUrl}/${this.url}/${employee.id}`);
-    return this.http.delete<Employee[]>(`${environment.apiUrl}/${this.url}/${employee.id}`);
+  public deleteEmployee(employee: Employee): Observable<Employee[]>|any{
+    try{
+      return this.http.delete<Employee[]>(`${environment.apiUrl}/${this.url}/${employee.id}`);
+    }
+    catch(e){
+      console.log(e)
+    }
   }
 
 }

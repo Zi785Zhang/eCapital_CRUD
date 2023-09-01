@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { EmployeeCrudComponent } from './components/employee-crud/employee-crud.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxBootstrapIconsModule.pick(allIcons)
   ],
   providers: [],
   bootstrap: [AppComponent]

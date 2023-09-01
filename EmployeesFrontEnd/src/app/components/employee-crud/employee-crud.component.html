@@ -1,7 +1,7 @@
 <div *ngIf="employee">
     <ng-template #content let-modal> 
         <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+            <h4 class="modal-title" id="modal-basic-title">Employee Profile</h4>
             <button type="button" class="btn-close" aria-label="Close" (click)="modal.close()"></button>
         </div>
         <div class="modal-body">
@@ -34,6 +34,6 @@
             <button class="btn btn-success" [disabled]="!validateSalary(employee)" (click)="modal.close(); addEmployee(employee)" *ngIf="!employee.id" >Add</button>
         </div>
     </ng-template>
-    <button class="btn btn-outline-success" (click)="open(content)" *ngIf="employee.id"> Edit</button><i class="bi bi-pencil-square"></i>
+    <button class="btn btn-outline-success" (click)="open(content)" *ngIf="employee.id"> Edit</button>
     <button class="btn btn-outline-secondary" (click)="open(content)" *ngIf="!employee.id">Add</button>
 </div>
