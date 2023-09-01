@@ -10,19 +10,19 @@
                     <ul class="list-group list-group-horizontal">
                         <li class="list-group-item title">First Name: </li>
                         <li class="list-group-item">
-                            <input type="string" [(ngModel)]="employee.first_name" name="firstname" placeholder="Zijian"/>
+                            <input class="input-group-text" type="string" [(ngModel)]="employee.first_name" name="firstname" placeholder="Zijian"/>
                         </li>
                     </ul>
                     <ul class="list-group list-group-horizontal">
                         <li class="list-group-item title">Last Name: </li>
                         <li class="list-group-item">
-                            <input type="string" [(ngModel)]="employee.last_name" name="lastname" placeholder="Zhang"/>
+                            <input class="input-group-text" type="string" [(ngModel)]="employee.last_name" name="lastname" placeholder="Zhang"/>
                         </li>
                     </ul>
                     <ul class="list-group list-group-horizontal">
                         <li class="list-group-item title">Salary: </li>
                         <li class="list-group-item">
-                            <input type="number" [(ngModel)]="employee.salary" name="salary" placeholder="0"/>
+                            <input class="input-group-text" type="number" [(ngModel)]="employee.salary" name="salary" placeholder="0"/>
                         </li>
                     </ul>
                     <ngb-alert [dismissible]="false" *ngIf="!validateSalary(employee)" type="danger" > Please entery only number </ngb-alert>
@@ -34,6 +34,6 @@
             <button class="btn btn-success" [disabled]="!validateSalary(employee)" (click)="modal.close(); addEmployee(employee)" *ngIf="!employee.id" >Add</button>
         </div>
     </ng-template>
-    <button class="btn btn-outline-success" (click)="open(content)" *ngIf="employee.id">Edit</button>
+    <button class="btn btn-outline-success" (click)="open(content)" *ngIf="employee.id"> Edit</button><i class="bi bi-pencil-square"></i>
     <button class="btn btn-outline-secondary" (click)="open(content)" *ngIf="!employee.id">Add</button>
 </div>
