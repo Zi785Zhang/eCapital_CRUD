@@ -4,13 +4,28 @@
       <th class="th">First Name</th>
       <th class="th">Last Name</th>
       <th class="th">Salary</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let employee of employeeList">
       <td class="td">{{ employee.first_name }}</td>
       <td class="td">{{ employee.last_name }}</td>
-      <td class="td">{{ employee.salary }}</td>
+      <td class="td">{{ employee.salary | currency:'USD': true: '1.0-0'}}</td>
+      <td class="td">
+        <app-employee-crud
+          [employee]=employee 
+          (updatedEmployees)="updateEmployeeList($event)"
+        ></app-employee-crud>
+      </td>
+      <td class="td"><button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(employee)">delete</button></td>
     </tr>
   </tbody>
 </table>
+<div class="box">
+  <app-employee-crud
+    [employee]="target" 
+    (updatedEmployees)="updateEmployeeList($event)"
+  ></app-employee-crud>
+</div>

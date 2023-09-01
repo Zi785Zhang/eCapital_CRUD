@@ -10,10 +10,27 @@ import { EmployeeService } from './services/employee.service';
 export class AppComponent {
   title = 'EmployeesFrontEnd';
   employeeList: Employee[] = [];
+  target: Employee = new Employee();
 
   constructor(private employeeService: EmployeeService) {}
 
   ngOnInit(): void {
     this.employeeService.getEmployees().subscribe((result: Employee[]) => (this.employeeList = result));
+  }
+
+  updateEmployeeList(employeeList: Employee[]){
+    this.employeeList = employeeList;
+  }
+
+  updateTarget(employee: Employee){
+    this.target = employee;
+  }
+
+  public deleteEmployee(employee: Employee){
+    this.employeeService
+      .deleteEmployee(employee)
+      .subscribe(() => {
+        this.ngOnInit()
+      })
   }
 }

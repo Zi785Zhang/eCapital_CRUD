@@ -1,0 +1,39 @@
+<div *ngIf="employee">
+    <ng-template #content let-modal> 
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.close()"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb3"> 
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item title">First Name: </li>
+                        <li class="list-group-item">
+                            <input type="string" [(ngModel)]="employee.first_name" name="firstname" placeholder="Zijian"/>
+                        </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item title">Last Name: </li>
+                        <li class="list-group-item">
+                            <input type="string" [(ngModel)]="employee.last_name" name="lastname" placeholder="Zhang"/>
+                        </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item title">Salary: </li>
+                        <li class="list-group-item">
+                            <input type="number" [(ngModel)]="employee.salary" name="salary" placeholder="0"/>
+                        </li>
+                    </ul>
+                    <ngb-alert [dismissible]="false" *ngIf="!validateSalary(employee)" type="danger" > Please entery only number </ngb-alert>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" [disabled]="!validateSalary(employee)" (click)="modal.close(); editEmployee(employee)" *ngIf="employee.id" >Save</button>
+            <button class="btn btn-success" [disabled]="!validateSalary(employee)" (click)="modal.close(); addEmployee(employee)" *ngIf="!employee.id" >Add</button>
+        </div>
+    </ng-template>
+    <button class="btn btn-outline-success" (click)="open(content)" *ngIf="employee.id">Edit</button>
+    <button class="btn btn-outline-secondary" (click)="open(content)" *ngIf="!employee.id">Add</button>
+</div>
