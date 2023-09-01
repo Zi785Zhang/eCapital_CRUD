@@ -4,7 +4,7 @@
 body{
     font-family:'Gill Sans', sans-serif;
     padding: 1em;
-    background-color: rgb(206, 206, 206);
+    background-color: rgb(185, 213, 240);
 }
 
 .card{
@@ -35,7 +35,7 @@ td{
 }
 
 .textcol{
-    width:90px
+    width:140px
 }
 
 .lastrow{
@@ -48,7 +48,10 @@ td{
 
 .btn{
     width: 80px;
-    margin-left: 10px;
+}
+
+.btn-outline-secondary{
+    width: 200px;
 }
 
 .list-group-item.title {

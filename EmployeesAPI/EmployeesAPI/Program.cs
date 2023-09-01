@@ -14,6 +14,7 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+// Added Cors policy to resolve Cors error
 builder.Services.AddCors(options => options.AddPolicy(name: "Cors",
     policy =>
     {

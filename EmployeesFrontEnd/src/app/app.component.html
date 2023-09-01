@@ -32,9 +32,9 @@
         <td><button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(employee)">delete</button></td>
       </tr>
       <tr class="lastrow">
-        <td colspan="4">
+        <td colspan="3">
         </td>
-        <td>
+        <td colspan="2">
           <app-employee-crud
             [employee]="target" 
             (updatedEmployees)="updateEmployeeList($event)"

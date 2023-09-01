@@ -12,6 +12,8 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) { }
 
+  //All CRUD service methods
+
   public getEmployees(): Observable<Employee[]>|any{
     try{
       return this.http.get<Employee[]>(`${environment.apiUrl}/${this.url}`);

@@ -18,15 +18,13 @@ export class AppComponent {
     this.employeeService.getEmployees().subscribe((result: Employee[]) => (this.employeeList = result));
   }
 
+  //Reset method post operation
   updateEmployeeList(employeeList: Employee[]){
     this.employeeList = employeeList;
     this.target = new Employee();
   }
 
-  updateTarget(employee: Employee){
-    this.target = employee;
-  }
-
+  //Delete operation method
   public deleteEmployee(employee: Employee){
     this.employeeService
       .deleteEmployee(employee)
