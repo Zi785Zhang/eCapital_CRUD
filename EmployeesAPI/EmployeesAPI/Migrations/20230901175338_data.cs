@@ -21,7 +21,7 @@ namespace EmployeesAPI.Migrations
                 "(4, 'Dennis', 'Nedry', 52000), " +
                 "(5, 'John', 'Hammond', 89600)," +
                 "(6, 'Ray', 'Arnold', 45000)," +
-                "(7, 'Laura', 'Burnett', 102000)");
+                "(7, 'Laura', 'Burnett', 80000)");
         }
 
         /// <inheritdoc />
